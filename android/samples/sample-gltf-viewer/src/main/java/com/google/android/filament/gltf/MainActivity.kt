@@ -18,11 +18,14 @@ package com.google.android.filament.gltf
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.gesture.OrientedBoundingBox
 import android.os.Bundle
 import android.view.Choreographer
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.SurfaceView
+import com.google.android.filament.Filament
+import com.google.android.filament.gltfio.FilamentAsset
 import com.google.android.filament.utils.KtxLoader
 import com.google.android.filament.utils.ModelViewer
 import com.google.android.filament.utils.Utils
@@ -33,8 +36,10 @@ class MainActivity : Activity() {
     companion object {
         // Load the library for the utility layer, which in turn loads gltfio and the Filament core.
         init { Utils.init() }
+        init {Filament.init()}
     }
 
+    private lateinit var filamentAsset: FilamentAsset
     private lateinit var surfaceView: SurfaceView
     private lateinit var choreographer: Choreographer
     private val frameScheduler = FrameCallback()
@@ -51,16 +56,13 @@ class MainActivity : Activity() {
         doubleTapDetector = GestureDetector(applicationContext, doubleTapListener)
 
         modelViewer = ModelViewer(surfaceView)
-
         surfaceView.setOnTouchListener { _, event ->
             modelViewer.onTouchEvent(event)
             doubleTapDetector.onTouchEvent(event)
             true
         }
-
         createRenderables()
         createIndirectLight()
-
         val dynamicResolutionOptions = modelViewer.view.dynamicResolutionOptions
         dynamicResolutionOptions.enabled = true
         modelViewer.view.dynamicResolutionOptions = dynamicResolutionOptions
@@ -75,14 +77,15 @@ class MainActivity : Activity() {
     }
 
     private fun createRenderables() {
-        val buffer = assets.open("models/scene.gltf").use { input ->
+        val buffer = assets.open("models/Ball.glb").use { input ->
             val bytes = ByteArray(input.available())
             input.read(bytes)
             ByteBuffer.wrap(bytes)
         }
-
-        modelViewer.loadModelGltfAsync(buffer) { uri -> readCompressedAsset("models/$uri") }
+        modelViewer.loadModelGlb(buffer)
         modelViewer.transformToUnitCube()
+
+
     }
 
     private fun createIndirectLight() {
@@ -123,6 +126,8 @@ class MainActivity : Activity() {
     inner class FrameCallback : Choreographer.FrameCallback {
         private val startTime = System.nanoTime()
         override fun doFrame(frameTimeNanos: Long) {
+            modelViewer.recomputeBoundingBoxes=true
+            //val boundingBox = modelViewer.asset?.boundingBox
             choreographer.postFrameCallback(this)
 
             modelViewer.animator?.apply {
@@ -132,7 +137,6 @@ class MainActivity : Activity() {
                 }
                 updateBoneMatrices()
             }
-
             modelViewer.render(frameTimeNanos)
         }
     }
