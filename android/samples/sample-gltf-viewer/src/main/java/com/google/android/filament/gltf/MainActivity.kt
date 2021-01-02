@@ -25,7 +25,7 @@ import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.SurfaceView
 import com.google.android.filament.Filament
-import com.google.android.filament.gltfio.FilamentAsset
+import com.google.android.filament.RenderableManager
 import com.google.android.filament.utils.KtxLoader
 import com.google.android.filament.utils.ModelViewer
 import com.google.android.filament.utils.Utils
@@ -39,7 +39,7 @@ class MainActivity : Activity() {
         init {Filament.init()}
     }
 
-    private lateinit var filamentAsset: FilamentAsset
+    private lateinit var renderableManager: RenderableManager
     private lateinit var surfaceView: SurfaceView
     private lateinit var choreographer: Choreographer
     private val frameScheduler = FrameCallback()
@@ -54,7 +54,6 @@ class MainActivity : Activity() {
         choreographer = Choreographer.getInstance()
 
         doubleTapDetector = GestureDetector(applicationContext, doubleTapListener)
-
         modelViewer = ModelViewer(surfaceView)
         surfaceView.setOnTouchListener { _, event ->
             modelViewer.onTouchEvent(event)
@@ -77,12 +76,12 @@ class MainActivity : Activity() {
     }
 
     private fun createRenderables() {
-        val buffer = assets.open("models/Ball.glb").use { input ->
+        val buffer = assets.open("models/scene.gltf").use { input ->
             val bytes = ByteArray(input.available())
             input.read(bytes)
             ByteBuffer.wrap(bytes)
         }
-        modelViewer.loadModelGlb(buffer)
+        modelViewer.loadModelGltf(buffer) { uri -> readCompressedAsset("models/$uri") }
         modelViewer.transformToUnitCube()
 
 
@@ -126,10 +125,19 @@ class MainActivity : Activity() {
     inner class FrameCallback : Choreographer.FrameCallback {
         private val startTime = System.nanoTime()
         override fun doFrame(frameTimeNanos: Long) {
-            modelViewer.recomputeBoundingBoxes=true
-            //val boundingBox = modelViewer.asset?.boundingBox
-            choreographer.postFrameCallback(this)
 
+            //modelViewer.asset?.boundingBox?.setCenter(-1F,-1F,-1F)
+            //modelViewer.asset?.boundingBox?.setHalfExtent(1F,1F,1F)
+            modelViewer.recomputeBoundingBoxes=true
+            val boundingBox = modelViewer.asset?.boundingBox
+            val a = boundingBox?.halfExtent
+            if (a != null) {
+                println("Length Width and Depth : ")
+                for (element in a) {
+                    println(element)
+                }
+            }
+            choreographer.postFrameCallback(this)
             modelViewer.animator?.apply {
                 if (animationCount > 0) {
                     val elapsedTimeSeconds = (frameTimeNanos - startTime).toDouble() / 1_000_000_000

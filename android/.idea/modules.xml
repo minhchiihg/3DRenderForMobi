@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/android.buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/filament.iml" filepath="$PROJECT_DIR$/.idea/modules/filament.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/filamat-android/filament.filamat-android.iml" filepath="$PROJECT_DIR$/.idea/modules/filamat-android/filament.filamat-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/filament-android/filament.filament-android.iml" filepath="$PROJECT_DIR$/.idea/modules/filament-android/filament.filament-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/filament-utils-android/filament.filament-utils-android.iml" filepath="$PROJECT_DIR$/.idea/modules/filament-utils-android/filament.filament-utils-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gltfio-android/filament.gltfio-android.iml" filepath="$PROJECT_DIR$/.idea/modules/gltfio-android/filament.gltfio-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/samples/filament.samples.iml" filepath="$PROJECT_DIR$/.idea/modules/samples/filament.samples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/samples/sample-gltf-viewer/filament.samples.sample-gltf-viewer.iml" filepath="$PROJECT_DIR$/.idea/modules/samples/sample-gltf-viewer/filament.samples.sample-gltf-viewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/samples/sample-hello-camera/filament.samples.sample-hello-camera.iml" filepath="$PROJECT_DIR$/.idea/modules/samples/sample-hello-camera/filament.samples.sample-hello-camera.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/samples/sample-hello-triangle/filament.samples.sample-hello-triangle.iml" filepath="$PROJECT_DIR$/.idea/modules/samples/sample-hello-triangle/filament.samples.sample-hello-triangle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/samples/sample-image-based-lighting/filament.samples.sample-image-based-lighting.iml" filepath="$PROJECT_DIR$/.idea/modules/samples/sample-image-based-lighting/filament.samples.sample-image-based-lighting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/samples/sample-lit-cube/filament.samples.sample-lit-cube.iml" filepath="$PROJECT_DIR$/.idea/modules/samples/sample-lit-cube/filament.samples.sample-lit-cube.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/samples/sample-live-wallpaper/filament.samples.sample-live-wallpaper.iml" filepath="$PROJECT_DIR$/.idea/modules/samples/sample-live-wallpaper/filament.samples.sample-live-wallpaper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/samples/sample-material-builder/filament.samples.sample-material-builder.iml" filepath="$PROJECT_DIR$/.idea/modules/samples/sample-material-builder/filament.samples.sample-material-builder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/samples/sample-multi-view/filament.samples.sample-multi-view.iml" filepath="$PROJECT_DIR$/.idea/modules/samples/sample-multi-view/filament.samples.sample-multi-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/samples/sample-page-curl/filament.samples.sample-page-curl.iml" filepath="$PROJECT_DIR$/.idea/modules/samples/sample-page-curl/filament.samples.sample-page-curl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/samples/sample-stream-test/filament.samples.sample-stream-test.iml" filepath="$PROJECT_DIR$/.idea/modules/samples/sample-stream-test/filament.samples.sample-stream-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/samples/sample-texture-view/filament.samples.sample-texture-view.iml" filepath="$PROJECT_DIR$/.idea/modules/samples/sample-texture-view/filament.samples.sample-texture-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/samples/sample-textured-object/filament.samples.sample-textured-object.iml" filepath="$PROJECT_DIR$/.idea/modules/samples/sample-textured-object/filament.samples.sample-textured-object.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/samples/sample-transparent-view/filament.samples.sample-transparent-view.iml" filepath="$PROJECT_DIR$/.idea/modules/samples/sample-transparent-view/filament.samples.sample-transparent-view.iml" />
+    </modules>
+  </component>
+</project>
