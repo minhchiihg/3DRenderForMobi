@@ -125,18 +125,17 @@ class MainActivity : Activity() {
     inner class FrameCallback : Choreographer.FrameCallback {
         private val startTime = System.nanoTime()
         override fun doFrame(frameTimeNanos: Long) {
-
-            //modelViewer.asset?.boundingBox?.setCenter(-1F,-1F,-1F)
-            //modelViewer.asset?.boundingBox?.setHalfExtent(1F,1F,1F)
+            //get size of Model
             modelViewer.recomputeBoundingBoxes=true
             val boundingBox = modelViewer.asset?.boundingBox
             val a = boundingBox?.halfExtent
             if (a != null) {
                 println("Length Width and Depth : ")
                 for (element in a) {
-                    println(element)
+                    println(element*2)
                 }
             }
+
             choreographer.postFrameCallback(this)
             modelViewer.animator?.apply {
                 if (animationCount > 0) {
