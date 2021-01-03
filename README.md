@@ -9,8 +9,8 @@
 - Hoàng Đức Anh
 
 # Ý tưởng dự án
-- Hiện nay các công cụ Marketing bất động sản đều hướng tới mục tiêu làm sao có thể khiến cho khách hàng ghi nhớ hình ảnh dự án vào tiềm thức. Với các sản phẩm bất động sản nhìn chung, khách hàng rất khó để đánh giá về tổng thể chất lượng. 
-- Để giải quyết vấn đề đó, hình ảnh 3D thiết kế công trình và diễn họa được sản xuất để mang đến cái nhìn tổng thể về ngôi nhà hơn cho khách hàng. Ở đây, nhóm chúng em lựa chọn đề tài dự án là mô tả vật thể qua hình ảnh 3D và các thông số kích thước của vật thể.
+- Hiện nay các công cụ Marketing đều hướng tới mục tiêu làm sao có thể khiến cho khách hàng ghi nhớ hình ảnh của sản phẩm một cách chính xác nhất vào tiềm thức. Với các sản phẩm nhìn chung, khách hàng rất khó để đánh giá về tổng thể chất lượng, hình ảnh sản phẩm.
+- Để giải quyết vấn đề đó, hình ảnh 3D được áp dụng để mang đến cái nhìn tổng thể và chính xác hơn về sản phẩm cho khách hàng. Ở đây, nhóm chúng em lựa chọn công việc cho dự án là mô tả vật thể qua hình ảnh 3D và hiển thị các thông số kích thước của vật thể.
 
 # Goals
 - Sử dụng 1 file ảnh GLB, in ra kích thước chiều dài, chiều rộng và chiều sâu trên 3 đường thẳng trên model
