@@ -1,4 +1,6 @@
 # SE04-Nhom13.1
+# Người hướng dẫn
+- Thầy Bùi Sỹ Nguyên
 # Thành viên trong nhóm:
 - Nguyễn Phong Lưu
 - Nguyễn Thị Minh Chi
