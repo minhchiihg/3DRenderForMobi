@@ -10,15 +10,15 @@
 
 # Ý tưởng dự án
 - Hiện nay các công cụ Marketing đều hướng tới mục tiêu làm sao có thể khiến cho khách hàng ghi nhớ hình ảnh của sản phẩm một cách chính xác nhất vào tiềm thức. Với các sản phẩm nhìn chung, khách hàng rất khó để đánh giá về tổng thể chất lượng, hình ảnh sản phẩm.
-- Để giải quyết vấn đề đó, hình ảnh 3D được áp dụng để mang đến cái nhìn tổng thể và chính xác hơn về sản phẩm cho khách hàng, và Google Filament là 1 công cụ hỗ trợ rất tốt cho việc hiển thị vật thể 3d. Ở đây, nhóm chúng em lựa chọn công việc cho dự án là mô tả vật thể qua hình ảnh 3D và hiển thị các thông số kích thước của vật thể sử dụng Google Filament.
+- Để giải quyết vấn đề đó, hình ảnh 3D được áp dụng để mang đến cái nhìn tổng thể và chính xác hơn về sản phẩm cho khách hàng, và Google Filament là 1 công cụ hỗ trợ rất tốt cho việc hiển thị vật thể 3D. Ở đây, nhóm chúng em lựa chọn công việc cho dự án là mô tả vật thể qua hình ảnh 3D và hiển thị các thông số kích thước của vật thể sử dụng Google Filament.
 
 # Goals
 - Sử dụng 1 file ảnh GLB, in ra kích thước chiều dài, chiều rộng và chiều sâu trên 3 đường thẳng trên model
 
 # Công nghệ và công cụ sử dụng
-- Công cụ: Visual Studio Code, Android Studio, Git for Windows( Git Bash).
-- Ngôn ngữ sử dụng: Kotlin
-- Công cụ hỗ trợ 3D cho Android: Filament
+- Công cụ: Visual Studio 2019, Android Studio, Git for Windows( Git Bash), Cmake, Ninja, Clang, Python 3, Windows 10 SDK, Android SDK, Android NDK, JDK.
+- Ngôn ngữ sử dụng: Kotlin.
+- Công cụ hỗ trợ 3D cho Android: Google Filament
 - Công cụ phát triển phần mềm: Github
 
 # Triển khai:
