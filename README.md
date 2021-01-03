@@ -22,6 +22,91 @@
 - Công cụ phát triển phần mềm: Github
 
 # Triển khai:
+## Build Filament
+- Sau khi cài đầy đủ các công cụ ở trên thì bắt đầu thực hiện việc build Filament.
+### Desktop Tools
+
+- Chạy cmake ở thư mục Filament.
+
+```
+mkdir out\cmake-release
+cd out\cmake-release
+cmake ^
+    -G Ninja ^
+    -DCMAKE_INSTALL_PREFIX=..\release\filament ^
+    -DFILAMENT_ENABLE_JAVA=NO ^
+    -DCMAKE_BUILD_TYPE=Release ^
+    ..\..
+```
+
+- Build công cụ cần thiết.
+
+  ```
+  ninja matc resgen cmgen
+  ```
+  sau khi cài xong tiếp tục chạy
+  ```
+  ninja install
+  ```
+
+### Build
+
+- Tạo thư mục build.
+  ```
+  mkdir out\cmake-android-release-aarch64
+  mkdir out\cmake-android-release-arm7
+  mkdir out\cmake-android-release-x86_64
+  mkdir out\cmake-android-release-x86
+  ```
+
+- Chạy cmake cho từng thư mục.
+
+  ```
+  cd out\cmake-android-release-aarch64
+  cmake ^
+    -G Ninja ^
+    -DCMAKE_BUILD_TYPE=Release ^
+    -DCMAKE_INSTALL_PREFIX=..\android-release\filament ^
+    -DCMAKE_TOOLCHAIN_FILE=..\..\build\toolchain-aarch64-linux-android.cmake ^
+    ..\..
+
+  cd out\cmake-android-release-arm7
+  cmake ^
+    -G Ninja ^
+    -DCMAKE_BUILD_TYPE=Release ^
+    -DCMAKE_INSTALL_PREFIX=..\android-release\filament ^
+    -DCMAKE_TOOLCHAIN_FILE=..\..\build\toolchain-arm7-linux-android.cmake ^
+    ..\..
+
+  cd out\cmake-android-release-x86_64
+  cmake ^
+    -G Ninja ^
+    -DCMAKE_BUILD_TYPE=Release ^
+    -DCMAKE_INSTALL_PREFIX=..\android-release\filament ^
+    -DCMAKE_TOOLCHAIN_FILE=..\..\build\toolchain-x86_64-linux-android.cmake ^
+    ..\..
+
+  cd out\cmake-android-release-x86
+  cmake ^
+    -G Ninja ^
+    -DCMAKE_BUILD_TYPE=Release ^
+    -DCMAKE_INSTALL_PREFIX=..\android-release\filament ^
+    -DCMAKE_TOOLCHAIN_FILE=..\..\build\toolchain-x86-linux-android.cmake ^
+    ..\..
+  ```
+- Build.
+  ở mỗi thư mục chạy lệnh
+  ```
+  ninja install
+  ```
+### Tạo file AAR
+
+  ```
+  cd android
+  gradlew -Pfilament_dist_dir=..\out\android-release\filament assembleRelease
+  copy filament-android\build\outputs\aar\filament-android-release.aar ..\..\out\
+  ```
+## Chạy Sample-gltf-viewer để thực hiện yêu cầu
 - Sample Filament đã có sẵn ModelViewer để model từ file hiển thị lên màn hình, lấy thông số trực tiếp từ từ ModelViewer, nhưng vì không tìm được cách lấy trực tiếp nên sẽ lấy qua Boundingbox của ModelViewer, sau khi lấy được HalfExtend thì sẽ lấy được 3 kích thước chiều dài, rộng và chiều sâu.
 
 ![image](https://user-images.githubusercontent.com/71346057/103465358-610dcb00-4d6d-11eb-9707-07731d75a38b.png)
