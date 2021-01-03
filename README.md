@@ -15,12 +15,10 @@
 # Goals
 - Sử dụng 1 file ảnh GLB, in ra kích thước chiều dài, chiều rộng và chiều sâu trên 3 đường thẳng trên model
 
-# Công nghệ sử dụng
-- Ngôn ngữ lập trình: Kotlin
-
-# Công cụ sử dụng: 
-- Visual Studio Code
-- Android Studio
+# Công nghệ và công cụ sử dụng
+- Công cụ: Visual Studio Code, Android Studio
+- Ngôn ngữ sử dụng: Kotlin
+- Công cụ hỗ trợ 3D cho Android: Filament
 - Công cụ phát triển phần mềm: Github
 
 # Triển khai:
